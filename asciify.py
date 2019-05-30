@@ -1,4 +1,6 @@
 from PIL import Image
+import os
+
 
 ASCII_CHARS = ['.',',',':',';','+','*','?','%','S','#','@']
 ASCII_CHARS = ASCII_CHARS[::-1]
@@ -71,7 +73,12 @@ def runner(path):
     # Note: This text file will be created by default under
     #       the same directory as this python file,
     #       NOT in the directory from where the image is pulled.
-    f = open('img.txt','w')
+
+    #files in folder will save jpg in txt-files with the same name
+    if '.jpg' in path:
+        f = open(path.replace('.jpg', '') + '.txt', 'w')
+    elif '.png' in path:
+        f = open(path.replace('.png', '') + '.txt', 'w')
     f.write(image)
     f.close()
 
@@ -80,12 +87,20 @@ method main():
     - reads input from console
     - profit
 '''
+
 if __name__ == '__main__':
-    import sys
-    import urllib.request
-    if sys.argv[1].startswith('http://') or sys.argv[1].startswith('https://'):
-        urllib.request.urlretrieve(sys.argv[1], "asciify.jpg")
-        path = "asciify.jpg"
-    else:
-        path = sys.argv[1]
-    runner(path)
+    # dont work, but looking good
+    # folder = os.path.dirname(os.path.abspath(__file__))
+
+    # not good, but work (enter your path)
+    folder = os.listdir('C:\\Users\\home\\Documents\\GitHub\\asciify\\')
+    
+    # will transform every jpg and png files to txt-asciify image 
+    for file in folder:
+        if file.endswith('.jpg') or file.endswith('.png'):
+            path = os.path.abspath(file)
+            print(path)
+            runner(path)
+
+
+
