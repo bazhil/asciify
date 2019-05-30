@@ -1,3 +1,9 @@
+The original asciify.py was changed:
+1) It can transform all images in folder
+2) Every image save to txt-file with the same name
+
+For work you must put images in root-folder and run code (in pycharm).
+
 ![](https://github.com/RameshAditya/asciify/blob/master/github-resources/logo.JPG)
 # Convert Images into ASCII Art with the power of Python
 
