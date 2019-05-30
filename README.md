@@ -4,6 +4,10 @@ The original asciify.py was changed:
 
 For work you must put images in root-folder and run code (in pycharm).
 
+Under you may read describtion of asciify from it's author.
+
+--------------------------------------------------------------
+
 ![](https://github.com/RameshAditya/asciify/blob/master/github-resources/logo.JPG)
 # Convert Images into ASCII Art with the power of Python
 
